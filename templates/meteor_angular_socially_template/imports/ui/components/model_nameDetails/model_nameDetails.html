@@ -1,0 +1,28 @@
+<div layout="column" layout-padding>
+  <div layout="column" layout-gt-sm="row"  layout-padding>
+    <form flex="50" layout="column">
+      <md-input-container>
+        <label>[[model.Name]] name</label>
+        <input ng-model="[[model.name]]Details.[[model.name]].name" ng-disabled="![[model.name]]Details.isLoggedIn">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Description</label>
+        <input ng-model="[[model.name]]Details.[[model.name]].description" ng-disabled="![[model.name]]Details.isLoggedIn">
+      </md-input-container>
+
+      <div>
+        <md-checkbox ng-model="[[model.name]]Details.[[model.name]].public" ng-disabled="![[model.name]]Details.isLoggedIn" aria-label="Public [[model.Name]]?">
+          Public [[model.Name]]?
+        </md-checkbox>
+      </div>
+
+      <div>
+        <md-button ng-click="[[model.name]]Details.save()" class="md-primary md-raised">Save</md-button>
+      </div>
+    </form>
+    <[[model.name]]-map flex="50" location="[[model.name]]Details.[[model.name]].location"></[[model.name]]-map>
+  </div>
+
+  <[[model.name]]-uninvited flex [[model.name]]="[[model.name]]Details.[[model.name]]" ng-show="[[model.name]]Details.canInvite()"></[[model.name]]-uninvited>
+</div>

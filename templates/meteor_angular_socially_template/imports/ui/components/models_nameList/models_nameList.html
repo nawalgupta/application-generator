@@ -1,0 +1,57 @@
+<div layout="column" layout-padding>
+  <[[model.name]]-add-button ng-show="[[model.names]]List.isLoggedIn"></[[model.name]]-add-button>
+
+  <div flex>
+    <h2 class="md-display-1">List of the [[model.names]]:</h2>
+  </div>
+
+  <div flex layout="row" layout-padding>
+    <md-input-container>
+      <label>Search</label>
+      <input ng-model="[[model.names]]List.searchText">
+    </md-input-container>
+
+    <[[model.names]]-sort on-change="[[model.names]]List.sortChanged(sort)" property="name" order="1"></[[model.names]]-sort>
+  </div>
+
+  <div layout="column" layout-gt-sm="row">
+    <div flex="50">
+      <md-card dir-paginate="[[model.name]] in [[model.names]]List.[[model.names]] | itemsPerPage: [[model.names]]List.perPage" total-items="[[model.names]]List.[[model.names]]Count">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline" ui-sref="[[model.name]]Details({ [[model.name]]Id: [[model.name]]._id })">
+              {{[[model.name]].name}}
+              <[[model.name]]-remove [[model.name]]="[[model.name]]"></[[model.name]]-remove>
+            </span>
+            <span class="md-subhead">{{[[model.name]].description}}</span>
+          </md-card-title-text>
+          <md-card-title-media ng-if="[[model.name]].images">
+            <div class="md-media-lg card-media">
+              <[[model.name]]-image images="[[model.name]].images"></[[model.name]]-image>
+            </div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-content>
+          <[[model.name]]-rsvps-list rsvps="[[model.name]].rsvps"></[[model.name]]-rsvps-list>
+
+          <[[model.name]]-unanswered [[model.name]]="[[model.name]]" ng-if="![[model.name]].public"></[[model.name]]-unanswered>
+          <div ng-if="[[model.name]].public">
+            Everyone is invited
+          </div>
+
+          <[[model.name]]-creator [[model.name]]="[[model.name]]"></[[model.name]]-creator>
+        </md-card-content>
+        <md-card-actions>
+          <[[model.name]]-rsvp [[model.name]]="[[model.name]]" ng-show="[[model.names]]List.isLoggedIn"></[[model.name]]-rsvp>
+          <div ng-hide="[[model.names]]List.isLoggedIn">
+            <i>Sign in to RSVP for this [[model.name]].</i>
+          </div>
+        </md-card-actions>
+      </md-card>
+      <dir-pagination-controls on-page-change="[[model.names]]List.pageChanged(newPageNumber)"></dir-pagination-controls>
+    </div>
+    <div flex="50">
+      <[[model.names]]-map [[model.names]]="[[model.names]]List.[[model.names]]"></[[model.names]]-map>
+    </div>
+  </div>
+</div>

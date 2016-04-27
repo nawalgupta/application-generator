@@ -1,0 +1,27 @@
+{
+	"source": "templates/socially_orginal" ,
+	"destination": "templates/meteor_angular_socially_template" ,
+	
+	"file_conversion": [
+			{"from":"socially" ,"to":"app_name"  },
+			{"from":"parties" ,"to":"models_name"  },
+			{"from":"party" ,"to":"model_name"  },
+			{"from":"socially1" ,"to":"app_name1"  }
+	],
+
+	"content_conversion": [
+			{"from":"socially" ,"to":"[[app.name]]"  },
+			{"from":"Socially" ,"to":"[[app.Name]]"  },
+			{"from":"parties" ,"to":"[[model.names]]"  },
+			{"from":"Parties" ,"to":"[[model.Names]]"  },
+			{"from":"party" ,"to":"[[model.name]]"  },
+			{"from":"Party" ,"to":"[[model.Name]]"  },			
+			{"from":"//MODELFORLOOP" ,"to":"{{ for model in app.models }}"  },
+			{"from":"//FIELDFORLOOP" ,"to":"{{ for field in model.fields}}"  },
+			{"from":"//ENDFOR" ,"to":"{{%endfor%}}"  }
+			
+	]
+	
+
+	
+}

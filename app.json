@@ -1,0 +1,9 @@
+{
+	"app": {
+		"name": "socially",
+		"Name": "Socially",		
+		"folder":"socially",
+		"title": "Socially",
+		"framework": "metor+angular"
+		}		
+}

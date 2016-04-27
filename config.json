@@ -1,0 +1,25 @@
+{
+	"template_folder": "templates/meteor_angulat_socially1" ,
+	"custom_template_folder": "custom_templates" ,
+	"output_folder": "genearate_app" ,
+	
+	
+	"node_modules": ["swig","ejs","angular" ,"angular-meteor"],
+	
+	"meteor_commands": ["remove blaze-html-templates",
+				"remove ecmascript",
+				"remove blaze-html-templates",
+				"remove ecmascript",
+				"npm install --save angular angular-meteor",
+				"add angular-templates pbastowski:angular-babel",
+				"npm install --save angular-ui-router",
+				"add sanjo:jasmine",
+				"add velocity:html-reporter",
+				"add velocity:console-reporter",
+				"npm install --save-dev angular-mocks",
+				"meteor remove insecure",
+				"accounts-password",
+				"dotansimha:accounts-ui-angular"
+				]
+	
+}

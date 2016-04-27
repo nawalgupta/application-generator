@@ -1,0 +1,16 @@
+{
+	"name": "party",
+	"names": "parties",
+	"Name": "Party",
+	"Names": "Parties",
+	
+	"title": "Student",	
+	"fields": [
+		{ "name": "name", "title": "Name", "required": true   },
+		{ "name": "age", "title": "Age", "default": "-"   }
+	],
+
+	"sample": "{name:'Some others',age:10},{name:'Someone',age:20}"
+	
+	
+}

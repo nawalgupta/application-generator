@@ -1,0 +1,23 @@
+<div layout="column" layout-padding>
+  <md-input-container>
+    <label>
+      [[model.Name]] Name:
+    </label>
+    <input type="text" ng-model="[[model.name]]Add.[[model.name]].name"/>
+  </md-input-container>
+  <md-input-container>
+    <label>
+      Description:
+    </label>
+    <input type="text" ng-model="[[model.name]]Add.[[model.name]].description"/>
+  </md-input-container>
+  <div flex>
+    <md-checkbox ng-model="[[model.name]]Add.[[model.name]].public" aria-label="Public [[model.Name]]?">
+      Public [[model.Name]]?
+    </md-checkbox>
+  </div>
+  <div flex>
+    <md-button ng-click="[[model.name]]Add.submit()" class="md-raised">Add [[model.Name]]!</md-button>
+  </div>
+  <[[model.name]]-upload files="[[model.name]]Add.[[model.name]].images"></[[model.name]]-upload>
+</div>

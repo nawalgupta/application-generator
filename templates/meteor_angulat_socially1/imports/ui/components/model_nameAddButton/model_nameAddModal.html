@@ -1,0 +1,16 @@
+<md-dialog aria-label="New [[model.name]]" ng-cloak>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>New [[model.name]]</h2>
+      <span flex></span>
+      <md-button ng-click="[[model.name]]AddModal.close()">
+        Close
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <[[model.name]]-add done="[[model.name]]AddModal.close()"></[[model.name]]-add>
+    </div>
+  </md-dialog-content>
+</md-dialog>
